@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useGamepadState } from './GamepadState';
 import WheelDisplay from './WheelDisplay';
 import ButtonAxisSelector from './ButtonAxisSelector';
+import { Link } from 'react-router-dom';
 
 const ControlPanel: React.FC = () => {
   const { gamepad } = useGamepadState();
@@ -32,6 +33,9 @@ const ControlPanel: React.FC = () => {
           <ButtonAxisSelector gamepad={gamepad} onSelectionChange={handleSelectionChange} />
         </div>
       )}
+      <Link to="/">
+        <button>Página Inicial (Gamepad Mapping)</button>
+      </Link>
     </div>
   );
 };

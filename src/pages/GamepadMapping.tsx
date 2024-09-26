@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const GamepadMapping: React.FC = () => {
   const [gamepadInfo, setGamepadInfo] = useState<any[]>([]);
@@ -36,6 +37,16 @@ const GamepadMapping: React.FC = () => {
           ))}
         </ul>
       )}
+      <Link to="/">
+        <button>Página Inicial (Gamepad Mapping)</button>
+      </Link>
+      <Link to="/control-panel">
+        <button>Painel de Controle</button>
+      </Link>
+      <Link to="/car-game">
+        <button>Iniciar Jogo</button>
+      </Link>
+
     </div>
   );
 };
