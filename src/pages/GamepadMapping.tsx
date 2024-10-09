@@ -23,7 +23,7 @@ const GamepadMapping: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'black', color: 'white', minHeight: '100vh', padding: '20px' }}>
       <h1>Gamepad Mapping</h1>
       {gamepadInfo.length === 0 ? <p>No gamepad connected</p> : (
         <ul>
@@ -37,16 +37,23 @@ const GamepadMapping: React.FC = () => {
           ))}
         </ul>
       )}
-      <Link to="/">
-        <button>Página Inicial (Gamepad Mapping)</button>
-      </Link>
-      <Link to="/control-panel">
-        <button>Painel de Controle</button>
-      </Link>
-      <Link to="/car-game">
-        <button>Iniciar Jogo</button>
-      </Link>
-
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <Link to="/">
+          <button style={{ margin: '10px 0', padding: '10px 20px', backgroundColor: 'grey', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+            Página Inicial (Gamepad Mapping)
+          </button>
+        </Link>
+        <Link to="/control-panel">
+          <button style={{ margin: '10px 0', padding: '10px 20px', backgroundColor: 'grey', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+            Painel de Controle
+          </button>
+        </Link>
+        <Link to="/car-game">
+          <button style={{ margin: '10px 0', padding: '10px 20px', backgroundColor: 'grey', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+            Iniciar Jogo
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

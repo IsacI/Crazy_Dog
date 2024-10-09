@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export const useGamepadState = () => {
+  <div style={{ backgroundColor: 'black', color: 'white', minHeight: '100vh', padding: '20px' }}></div>
   const [gamepad, setGamepad] = useState<Gamepad | null>(null);
   const [buttonStates, setButtonStates] = useState<boolean[]>([]);
   const [axisStates, setAxisStates] = useState<number[]>([]);

@@ -3,6 +3,8 @@ import { useGamepadState } from './GamepadState';
 import WheelDisplay from './WheelDisplay';
 import ButtonAxisSelector from './ButtonAxisSelector';
 import { Link } from 'react-router-dom';
+import minhaImagem from '../img/Design sem nome.png'; 
+
 
 const ControlPanel: React.FC = () => {
   const { gamepad } = useGamepadState();
@@ -20,9 +22,12 @@ const ControlPanel: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'black', color: 'white', minHeight: '100vh', padding: '20px' }}>
       <h1>Control Panel</h1>
-      {gamepad && (
+
+      {/* Adicionando a imagem aqui */}
+      
+      {gamepad ? (
         <div>
           <h2>Gamepad {gamepad.index}</h2>
           <WheelDisplay
@@ -32,9 +37,14 @@ const ControlPanel: React.FC = () => {
           />
           <ButtonAxisSelector gamepad={gamepad} onSelectionChange={handleSelectionChange} />
         </div>
+      ) : (
+        <p>Nenhum gamepad conectado.</p> // Optional message if no gamepad is connected
       )}
+      
       <Link to="/">
-        <button>Página Inicial (Gamepad Mapping)</button>
+        <button style={{ marginTop: '20px', padding: '10px 20px', backgroundColor: 'grey', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+          Página Inicial (Gamepad Mapping)
+        </button>
       </Link>
     </div>
   );

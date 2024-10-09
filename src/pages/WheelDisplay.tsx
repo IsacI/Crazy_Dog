@@ -32,7 +32,9 @@ const WheelDisplay: React.FC<WheelDisplayProps> = ({ gamepad, selectedAxis, sele
   }, [gamepad, selectedAxis]);
 
   return (
+    
     <div>
+      <div style={{ backgroundColor: 'black', color: 'white', minHeight: '100vh', padding: '20px' }}></div>
       <h1>Wheel Display</h1>
       <div>
         <h3>Volante</h3>

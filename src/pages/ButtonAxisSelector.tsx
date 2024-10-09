@@ -17,7 +17,9 @@ const ButtonAxisSelector: React.FC<ButtonAxisSelectorProps> = ({ gamepad, onSele
   };
 
   return (
+    
     <div>
+      <div style={{ backgroundColor: 'black', color: 'white', minHeight: '100vh', padding: '20px' }}></div>
       <h3>Selecionar Botões e Eixos</h3>
       <div>
         <label>Eixo: </label>

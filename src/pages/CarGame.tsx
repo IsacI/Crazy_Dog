@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Importe o Link para navegação
 
 const CarGame: React.FC = () => {
   const [gamepad, setGamepad] = useState<Gamepad | null>(null);
@@ -58,7 +59,7 @@ const CarGame: React.FC = () => {
   }, [speed, gear, isStopped]);
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px', position: 'relative', height: '300px' }}>
+    <div style={{ backgroundColor: 'black', color: 'white', minHeight: '100vh', padding: '20px', textAlign: 'center', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
       <h1>Jogo de Carro</h1>
       {gamepad ? (
         <div>
@@ -80,6 +81,24 @@ const CarGame: React.FC = () => {
       ) : (
         <p>Nenhum gamepad conectado. Por favor, conecte um gamepad para jogar.</p>
       )}
+
+      {/* Adiciona o botão de voltar no canto esquerdo */}
+      <Link to="/">
+        <button style={{
+          position: 'absolute', // Posiciona o botão de forma absoluta
+          top: '20px', // Alinha o botão no topo da tela
+          left: '20px', // Posiciona o botão no canto esquerdo
+          padding: '10px 20px',
+          fontSize: '16px',
+          backgroundColor: 'grey', // Cor de fundo do botão
+          color: 'white', // Cor da fonte do botão
+          border: 'none', // Remove a borda do botão
+          borderRadius: '5px', // Bordas arredondadas
+          cursor: 'pointer' // Cursor de ponteiro ao passar sobre o botão
+        }}>
+          Voltar à Página Principal
+        </button>
+      </Link>
     </div>
   );
 };
